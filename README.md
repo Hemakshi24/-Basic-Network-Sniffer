@@ -10,29 +10,37 @@ raw payload preview in hex and ASCII
 Use this only on machines and networks where you have permission to inspect traffic.
 
 Setup
+
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install -r requirements.txt
+
 On Windows, live capture usually also requires:
 
 Npcap
 an Administrator terminal
 Usage
+
 List interfaces:
-
 python sniffer.py --list-interfaces
+
+
 Capture 10 packets on the default interface:
-
 python sniffer.py --count 10
+
+
 Capture only TCP traffic:
-
 python sniffer.py --filter "tcp"
+
+
 Capture DNS traffic on a specific interface:
-
 python sniffer.py --interface "Wi-Fi" --filter "port 53"
-Hide payload previews:
 
+
+Hide payload previews:
 python sniffer.py --no-payload
+
+
 What To Look For
 Each packet line shows how data flows from one endpoint to another:
 
